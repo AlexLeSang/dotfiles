@@ -125,6 +125,7 @@ build_prompt() {
 }
 
 autoload -U compinit && compinit
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 setopt NO_HUP
 alias ll="ls -ll"
