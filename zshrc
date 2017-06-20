@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd scala web-search tmux svn-fast-info sbt colored-man-pages colorize)
+plugins=(zsh-autosuggestions zsh-completions git fasd scala web-search tmux svn-fast-info sbt colored-man-pages colorize)
 
 # User configuration
 
@@ -123,6 +123,8 @@ build_prompt() {
     prompt_svn
     prompt_end
 }
+
+autoload -U compinit && compinit
 
 setopt NO_HUP
 alias ll="ls -ll"
