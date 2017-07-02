@@ -5,7 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bira"
+ZSH_THEME="avit"
 
 # ZSH_TMUX_AUTOSTART="true" 
 
@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-completions git fasd scala web-search tmux svn-fast-info sbt colored-man-pages colorize)
+plugins=(vi-mode zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info sbt colored-man-pages colorize)
 
 # User configuration
 
@@ -88,6 +88,7 @@ zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $(whoami)|sed "/ps/d"
 zstyle ':completion:*:processes' insert-ids menu yes select
 zstyle ':completion:*:processes-names' command 'NOCOLORS=1 ps xho command|sed "s/://g"'
 zstyle ':completion:*:processes' sort false
+zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
 
 #alias a='fasd -a'        # any
 #alias s='fasd -si'       # show / search / select
@@ -126,6 +127,37 @@ build_prompt() {
 
 autoload -U compinit && compinit
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
+zstyle ':completion:*' menu select
+setopt complete_in_word
+
+autoload -U zmv
+setopt extended_glob
+
+setopt correct
+autoload -U colors && colors
+export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r?$reset_color (Yes, No, Abort, Edit) "
+
+setopt menu_complete
+
+setopt inc_append_history
+setopt share_history
+
+setopt auto_cd
+
+autoload -U regexp-replace
+setopt re_match_pcre
+
+# bindkey -v
+export KEYTIMEOUT=0
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+# zle -N edit-command-line
+# bindkey '^xe' edit-command-line
+# bindkey '^x^e' edit-command-line
+# Vi style:
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 setopt NO_HUP
 alias ll="ls -ll"
