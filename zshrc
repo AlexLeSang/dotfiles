@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info sbt colored-man-pages colorize)
+plugins=(zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info sbt colored-man-pages colorize)
 
 # User configuration
 
@@ -147,17 +147,12 @@ setopt auto_cd
 autoload -U regexp-replace
 setopt re_match_pcre
 
-# bindkey -v
-export KEYTIMEOUT=0
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 # Emacs style
-# zle -N edit-command-line
-# bindkey '^xe' edit-command-line
-# bindkey '^x^e' edit-command-line
-# Vi style:
 zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 setopt NO_HUP
 alias ll="ls -ll"
