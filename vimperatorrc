@@ -1,6 +1,8 @@
 :set hintchars=hjklasdfgyuiopqwertnmzxcvb
 " :set hintchars=asdfghjkl
 
+set scroll=3
+
 " Vimperator Molokai
 " Based on molokai.vim in https://github.com/vehk/dotfiles/blob/master/vim/colors/molokai.vim
 " See also term colors: https://github.com/vehk/dotfiles/blob/master/colors/molokai

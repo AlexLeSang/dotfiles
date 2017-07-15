@@ -156,5 +156,4 @@ bindkey '^x^e' edit-command-line
 
 setopt NO_HUP
 alias ll="ls -ll"
-PATH=$PATH:~/bin
 export SVN_EDITOR=vim
