@@ -5,7 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="avit"
+ZSH_THEME="bira"
 
 # ZSH_TMUX_AUTOSTART="true" 
 
@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info sbt colored-man-pages colorize)
+plugins=(cp extract zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info sbt colored-man-pages colorize)
 
 # User configuration
 
@@ -157,3 +157,5 @@ bindkey '^x^e' edit-command-line
 setopt NO_HUP
 alias ll="ls -ll"
 export SVN_EDITOR=vim
+alias h='history | grep '
+source ~/.profile
