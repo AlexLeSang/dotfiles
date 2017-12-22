@@ -7,7 +7,7 @@
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
-# ZSH_TMUX_AUTOSTART="true" 
+# ZSH_TMUX_AUTOSTART="true"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -52,6 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-completions git git-extras fasd scala web-search svn-fast-info sbt colored-man-pages colorize elixir)
+plugins=(cp extract zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info sbt colored-man-pages colorize)
 
 # User configuration
 
@@ -163,3 +164,5 @@ alias ec="emacs-26.0.90 -nw"
 alias ew="emacs-26.0.90"
 alias cew="emacsclient"
 alias cec="emacsclient -nw"
+alias h='history | grep '
+emulate sh -c '. ~/.profile'
