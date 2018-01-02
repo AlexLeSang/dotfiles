@@ -160,9 +160,13 @@ alias ll="ls -ll"
 export SVN_EDITOR=vim
 source ~/.profile
 alias ccat="pygmentize -g"
-alias ec="emacs-26.0.90 -nw"
-alias ew="emacs-26.0.90"
-alias cew="emacsclient"
-alias cec="emacsclient -nw"
+alias ec="emacs25 -nw"
+alias ew="emacs25"
+alias cew="emacsclient25"
+alias cec="emacsclient25 -nw"
 alias h='history | grep '
 emulate sh -c '. ~/.profile'
+
+# Bash-like navigation
+autoload -U select-word-style
+select-word-style bash
