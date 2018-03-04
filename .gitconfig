@@ -18,8 +18,6 @@
 	followTags = true
 [status]
   showUntrackedFiles = all
-[transfer]
-  fsckobjects = true
 [core]
 	editor = vim 
 [credential]

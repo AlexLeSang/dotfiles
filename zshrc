@@ -91,14 +91,6 @@ zstyle ':completion:*:processes-names' command 'NOCOLORS=1 ps xho command|sed "s
 zstyle ':completion:*:processes' sort false
 zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
 
-#alias a='fasd -a'        # any
-#alias s='fasd -si'       # show / search / select
-#alias d='fasd -d'        # directory
-#alias f='fasd -f'        # file
-#alias sd='fasd -sid'     # interactive directory selection
-#alias sf='fasd -sif'     # interactive file selection
-#alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-#alias zz='fasd_cd -d -i' # cd with interactive selection
 
 prompt_svn() {
     local rev branch
@@ -170,3 +162,9 @@ emulate sh -c '. ~/.profile'
 # Bash-like navigation
 autoload -U select-word-style
 select-word-style bash
+
+if [ -n "$INSIDE_EMACS" ]; then
+    chpwd() { print -P "\033AnSiTc %d" }
+    print -P "\033AnSiTu %n"
+    print -P "\033AnSiTc %d"
+fi
