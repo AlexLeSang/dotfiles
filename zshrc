@@ -52,8 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-completions git git-extras fasd scala web-search svn-fast-info sbt colored-man-pages colorize elixir)
-plugins=(cp extract zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info sbt colored-man-pages colorize)
+plugins=(cp extract zsh-autosuggestions zsh-completions git fasd scala web-search svn-fast-info colored-man-pages colorize elixir asdf tmux)
 
 # User configuration
 
@@ -153,12 +152,31 @@ alias ll="ls -ll"
 export SVN_EDITOR=vim
 source ~/.profile
 alias ccat="pygmentize -g"
-alias ec="emacs25 -nw"
-alias ew="emacs25"
-alias cew="emacsclient25"
-alias cec="emacsclient25 -nw"
+
+# alias ec="emacs25 -nw"
+# alias ew="emacs25"
+
+# alias ec="/home/halushko/Projects/emacs-26.1-rc1/src/emacs-26.1.1 -nw"
+# alias ew="/home/halushko/Projects/emacs-26.1-rc1/src/emacs-26.1.1"
+# alias ec="/home/halushko/Projects/emacs-26.1/src/emacs-26.1.1 -nw"
+# alias ew="/home/halushko/Projects/emacs-26.1/src/emacs-26.1.1"
+# alias e="/home/halushko/Projects/emacs-26.1/lib-src/emacsclient"
+alias ewt="/home/halushko/Projects/emacs/src/emacs"
+alias ect="/home/halushko/Projects/emacs/src/emacs -nw"
+alias ew="/opt/emacs-26.1/src/emacs"
+alias ec="/opt/emacs-26.1/src/emacs -nw"
+# alias ew="/home/halushko/Projects/emacs/src/emacs"
+# alias e="/home/halushko/Projects/emacs/lib-src/emacsclient"
+alias vf='vim $(fzf)'
+
+# alias cew="emacsclient25"
+# alias cec="emacsclient25 -nw"
+
 alias h='history | grep '
 emulate sh -c '. ~/.profile'
+
+alias j='fasd_cd -d'     # cd, same functionality as j in autojump
+alias jj='fasd_cd -d -i' # cd with interactive selection
 
 # Bash-like navigation
 autoload -U select-word-style
@@ -169,3 +187,5 @@ if [ -n "$INSIDE_EMACS" ]; then
     print -P "\033AnSiTu %n"
     print -P "\033AnSiTc %d"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
