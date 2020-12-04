@@ -294,6 +294,242 @@
         </finalactions>
       </action>
     </keybind>
+    <!-- Tiling -->
+    <!-- Switch tiling -->
+    <keybind key="W-m">
+      <action name="If">
+        <query target="default">
+          <maximizedvertical>yes</maximizedvertical>
+        </query>
+        <!-- Switch to horizontal -->
+        <then>
+          <action name="UnmaximizeFull"/>
+          <action name="MoveResizeTo">
+            <height>50%</height>
+          </action>
+          <action name="MaximizeHorz"/>
+          <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
+          </action>
+          <action name="NextWindow">
+            <interactive>no</interactive>
+            <dialog>none</dialog>
+            <finalactions>
+              <action name="UnmaximizeFull"/>
+              <action name="MoveResizeTo">
+                <height>50%</height>
+              </action>
+              <action name="MaximizeHorz"/>
+              <action name="MoveResizeTo">
+                <x>0</x>
+                <y>-0</y>
+              </action>
+            </finalactions>
+          </action>
+        </then>
+        <!-- Switch to vertical -->
+        <else>
+          <action name="UnmaximizeFull"/>
+          <action name="MoveResizeTo">
+            <width>50%</width>
+          </action>
+          <action name="MaximizeVert"/>
+          <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
+          </action>
+          <action name="NextWindow">
+            <interactive>no</interactive>
+            <dialog>none</dialog>
+            <finalactions>
+              <action name="UnmaximizeFull"/>
+              <action name="MoveResizeTo">
+                <width>50%</width>
+              </action>
+              <action name="MaximizeVert"/>
+              <action name="MoveResizeTo">
+                <x>-0</x>
+                <y>0</y>
+              </action>
+            </finalactions>
+          </action>
+        </else>
+      </action>
+    </keybind>
+    <keybind key="W-n">
+      <action name="maximize"/>
+      <action name="NextWindow">
+        <interactive>no</interactive>
+        <dialog>none</dialog>
+        <finalactions>
+          <action name="maximize"/>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="W-S-n">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Iconify"/>
+    </keybind>
+    <!-- Move between windows -->
+    <keybind key="W-l">
+      <action name="If">
+        <query>
+          <maximized>no</maximized>
+        </query>
+        <then>
+          <action name="DirectionalTargetWindow">
+            <direction>east</direction>
+          </action>
+        </then>
+        <else>
+          <action name="NextWindow">
+            <dialog>yes</dialog>
+            <linear>yes</linear>
+            <interactive>no</interactive>
+            <bar>yes</bar>
+          </action>
+        </else>
+      </action>
+    </keybind>
+    <keybind key="W-h">
+      <action name="If">
+        <query>
+          <maximized>no</maximized>
+        </query>
+        <then>
+          <action name="DirectionalTargetWindow">
+            <direction>west</direction>
+          </action>
+        </then>
+        <else>
+          <action name="PreviousWindow">
+            <dialog>yes</dialog>
+            <linear>yes</linear>
+            <interactive>no</interactive>
+            <bar>yes</bar>
+          </action>
+        </else>
+      </action>
+    </keybind>
+    <keybind key="W-j">
+      <action name="DirectionalTargetWindow">
+        <direction>south</direction>
+      </action>
+    </keybind>
+    <keybind key="W-k">
+      <action name="DirectionalTargetWindow">
+        <direction>north</direction>
+      </action>
+    </keybind>
+    <!-- swap Window Position -->
+    <keybind key="W-S-l">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
+      <action name="NextWindow">
+        <interactive>no</interactive>
+        <dialog>none</dialog>
+        <finalactions>
+          <action name="UnmaximizeFull"/>
+          <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
+            <height>100%</height>
+            <width>50%</width>
+          </action>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="W-S-h">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
+      <action name="NextWindow">
+        <interactive>no</interactive>
+        <dialog>none</dialog>
+        <finalactions>
+          <action name="UnmaximizeFull"/>
+          <action name="MoveResizeTo">
+            <x>-0</x>
+            <y>0</y>
+            <height>100%</height>
+            <width>50%</width>
+          </action>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="W-S-j">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+      <action name="NextWindow">
+        <interactive>no</interactive>
+        <dialog>none</dialog>
+        <finalactions>
+          <action name="UnmaximizeFull"/>
+          <action name="MoveResizeTo">
+            <x>0</x>
+            <y>-0</y>
+            <width>100%</width>
+            <height>50%</height>
+          </action>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="W-S-k">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+      <action name="NextWindow">
+        <interactive>no</interactive>
+        <dialog>none</dialog>
+        <finalactions>
+          <action name="UnmaximizeFull"/>
+          <action name="MoveResizeTo">
+            <x>0</x>
+            <y>0</y>
+            <width>100%</width>
+            <height>50%</height>
+          </action>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+    <!-- Keybindings for running applications -->
+    <keybind key="W-z">
+      <action name="Reconfigure"/>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>alacritty</command>
+      </action>
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute">
+        <command>dmenu_run -nb black</command>
+      </action>
+    </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
