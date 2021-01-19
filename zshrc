@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/halushko/.oh-my-zsh
-
+# export ZSH=/home/halushko/.oh-my-zsh
+ZSH=/usr/share/oh-my-zsh/
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -58,6 +58,11 @@ plugins=(cp extract git zsh-autosuggestions zsh-completions fasd web-search svn-
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -152,6 +157,9 @@ alias ll="ls -ll"
 export SVN_EDITOR=vim
 source ~/.profile
 alias ccat="pygmentize -g"
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 alias vf='vim $(fzf)'
 
